@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.css";
 import "./App.css";
 
 // react-router-dom
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// auth-context
+import { AuthContext } from "./contexts/AuthContext";
 
 // elements
 import Navbar from "./components/Navbar";
@@ -21,11 +24,16 @@ import Profile from "./containers/Profile";
 import FindOne from "./containers/Admin/FindOne";
 
 function App() {
-  const isAuthenticated = true;
-  const isAdmin = true;
+  const [isAuthenticated, setIsAuthenticated, isAdmin, setIsAdmin] =
+    useContext(AuthContext);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+        isAdmin={setIsAdmin}
+        setIsAdmin={setIsAdmin}
+      />
       <BrowserRouter>
         <Routes>
           {/* Unprotected Routes */}
