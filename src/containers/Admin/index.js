@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Outlet } from "react-router-dom";
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div>
+      <div>Admin</div>
+      <div><Outlet /></div>
+    </div>
   )
 }
 
