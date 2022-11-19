@@ -7,6 +7,10 @@ module.exports = {
         sans: ["Playfair Display"],
         serif: ["Open Sans"],
       },
+      colors: {
+        primary: "#f8f9fa",
+        secondary: "#fff"
+      }
     },
   },
   plugins: [],
